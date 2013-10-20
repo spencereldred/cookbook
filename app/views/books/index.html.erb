@@ -1,0 +1,5 @@
+<%= render "field_titles" %>
+<% @books.each do |entry| %>
+  <%= render "books" , book: entry %> <!-- the sample: symbol is "sample" variable in the partial  -->
+<% end %>
+<%= link_to "New Book", new_book_path %>

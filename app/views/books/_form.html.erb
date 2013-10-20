@@ -1,0 +1,13 @@
+<%= form_for @book do  |f|  %>
+    <div class="col-lg-2 col-lg-offset-2"><%= f.label :title %></br>
+                  <%= f.text_field :title, placeholder: "title" %></div>
+    <div class="col-lg-2"><%= f.label :author %></br>
+                  <%= f.text_field :author, placeholder: "author" %></div>
+    <div class="col-lg-2"><%= f.label :cuisine %></br>
+                  <%= f.text_field :cuisine, placeholder: "cuisine" %></div>
+    <div class="col-lg-2"><%= f.label :publication_date %></br>
+                  <%= f.text_field :publication_date, placeholder: "publication_date" %></div>
+
+    <br>
+    <div class="col-lg-offset-5 col-lg-2"><%= f.submit "Save Cookbook" %></div>
+<% end %>

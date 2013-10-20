@@ -1,0 +1,10 @@
+<%= form_for @ingredient_recipe do  |f|  %>
+    <div class="col-lg-offset-4 col-lg-2"><%= f.label :recipe_id %></br>
+                  <%= f.text_field :recipe_id, placeholder: "recipe_id" %></div>
+    <div class="col-lg-2"><%= f.label :ingredient_id %></br>
+                  <%= f.text_field :ingredient_id, placeholder: "ingredient_id" %></div>
+    <div class="col-lg-2"><%= f.label :quantity %></br>
+                  <%= f.text_field :quantity, placeholder: "quantity" %></div>
+    <br>
+    <div class="col-lg-offset-5 col-lg-2"><%= f.submit "Save Ingredient_recipes" %></div>
+<% end %>

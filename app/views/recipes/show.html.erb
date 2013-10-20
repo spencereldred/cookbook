@@ -1,0 +1,12 @@
+<%= render "field_titles" %>
+<%= render "recipes" , recipe: @recipe %>
+</br></br>
+<h4>
+    <div class="col-lg-offset-4 col-lg-2">Ingredient</div>
+    <div class="col-lg-6">Quantity</div>
+  </h4>
+  <% @ingredients_for_recipe.each_with_index do |ingredient, i| %>
+    <div class="col-lg-offset-4 col-lg-2"><%= @ingredients[ingredient[:ingredient_id]-1][:name] %></div>
+    <div class="col-lg-6"><%= ingredient[:quantity]%> </div>
+  <% end %>
+<%= link_to "back to all recipes", recipes_path %>

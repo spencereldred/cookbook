@@ -1,0 +1,10 @@
+<div>
+  <h5>
+    <div class="col-lg-offset-1 col-lg-2"><a href="/books/<%= book.id %>"><%= book.title %></a></div>
+    <div class="col-lg-2"><%= book.author %></div>
+    <div class="col-lg-2"><%= book.cuisine %></div>
+    <div class="col-lg-2"><%= book.publication_date.strftime("%b %Y") %></div>
+    <div class="col-lg-3"><%= link_to "Edit", edit_book_path(book) %> <!-- /books/:id -->
+    <%= link_to "Delete", book_path(book), :method => :delete, :confirm => "Are you sure?" %></div>
+  </h5>
+</div>

@@ -1,0 +1,17 @@
+<%= form_for @recipe do  |f|  %>
+    <div class="col-lg-offset-0 col-lg-2"><%= f.label :title %></br>
+                  <%= f.text_field :title, placeholder: "title" %></div>
+    <div class="col-lg-2"><%= f.label :book_id %></br>
+                  <%= f.text_field :book_id, placeholder: "book_id" %></div>
+    <div class="col-lg-2"><%= f.label :chapter %></br>
+                  <%= f.text_field :chapter, placeholder: "chapter" %></div>
+    <div class="col-lg-2"><%= f.label :page_number %></br>
+                  <%= f.text_field :page_number, placeholder: "page_number" %></div>
+    <div class="col-lg-2"><%= f.label :directions %></br>
+                  <%= f.text_field :directions, placeholder: "directions" %></div>
+    <div class="col-lg-2"><%= f.label :image %></br>
+                  <%= f.text_field :image, placeholder: "image" %></div>
+
+    <br>
+    <div class="col-lg-offset-5 col-lg-2"><%= f.submit "Save Recipes" %></div>
+<% end %>

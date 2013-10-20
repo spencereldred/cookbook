@@ -1,0 +1,5 @@
+<%= render "field_titles" %>
+<% @ingredient_recipes.each do |entry| %>
+  <%= render "ingredient_recipes" , ingredient_recipe: entry %> <!-- the sample: symbol is "sample" variable in the partial  -->
+<% end %>
+<%= link_to "New ingredient_recipe", new_ingredient_recipe_path %>

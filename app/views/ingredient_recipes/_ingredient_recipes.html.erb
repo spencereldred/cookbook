@@ -1,0 +1,9 @@
+<div>
+  <h5>
+    <div class="col-lg-offset-2 col-lg-2"><a href="/ingredient_recipes/<%= ingredient_recipe.id %>"><%= ingredient_recipe.recipe_id %></a></div>
+    <div class="col-lg-2"><%= ingredient_recipe.ingredient_id %></div>
+    <div class="col-lg-2"><%= ingredient_recipe.quantity %></div>
+    <div class="col-lg-4"><%= link_to "Edit", edit_ingredient_recipe_path(ingredient_recipe) %> <!-- /ingredient_recipes/:id -->
+    <%= link_to "Delete", ingredient_recipe_path(ingredient_recipe), :method => :delete, :confirm => "Are you sure?" %></div>
+  </h5>
+</div>

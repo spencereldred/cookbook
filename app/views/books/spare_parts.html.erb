@@ -1,0 +1,77 @@
+spare_parts.html.erb
+
+from new.html.erb
+<form action="/books" method="post">
+  <div class="col-lg-2 col-lg-offset-2">
+    <div><h3>Title</h3></div>
+    <div><input type="text" name="book[title]"></div>
+  </div>
+  <div class="col-lg-2">
+    <div><h3>Author</h3></div>
+    <div><input type="text" name="book[author]"></div>
+  </div>
+  <div class="col-lg-2">
+    <div><h3>Cuisine</h3></div>
+    <div><input type="text" name="book[cuisine]"></div></div>
+  <div class="col-lg-2">
+    <div><h3>Pub Date</h3></div>
+    <div><input type="text" name="book[publication_date]"></div></div>
+  <div class="col-lg-offset-5 col-lg-2">
+    <input type="submit" class="btn btn-primary btn-block" value="Submit">
+  </div>
+</form>
+
+flash from application
+      <div class="col-lg-offset-4 col-lg-8 error">
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </div>
+
+from index.html.erb
+<div class="col-lg-7 col-lg-offset-5"><h1>Cookbooks</h1></div>
+
+<div class="col-lg-2 col-lg-offset-2"><h3>Title</h3></div>
+<div class="col-lg-2">                         <h3>Author</h3> </div>
+<div class="col-lg-2">                         <h3>Cuisine</h3></div>
+<div class="col-lg-4">                         <h3>Pub Date</h3></div>
+
+<% @books.each do |book| %>
+
+<div class="col-lg-2 col-lg-offset-2"><%= book.title %></div>
+<div class="col-lg-2"><%= book.author %> </div>
+<div class="col-lg-2"><%= book.cuisine %></div>
+<div class="col-lg-1"><%= book.publication_date.strftime("%b %Y") %></div>
+<div class="col-lg-3">
+  <a href="/books/<%= book.id %>/edit">
+    <input type="submit" class="btn btn-primary btn-xs" value="Edit">
+  </a>
+</div>
+<% end %>
+<div class="container">
+  <div class="col-lg-offset-5 col-lg-2">
+    <a href="/books/new"><button class="btn btn-primary btn-block">Add New Book</button></a>
+  </div>
+</div>
+
+from edit.html.erb
+<div class="col-lg-offset-5 col-lg-7 col-md-offset-5 col-md-7"><h1>Edit Book</h1></div>
+<form action="/books/<%= @book.id %>" method="put">
+  <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2">
+    <div><h3>Title</h3></div>
+    <div><input type="text" value="<%= @book.title %>" name="book[title]"></div>
+  </div>
+  <div class="col-lg-2 col-md-2">
+    <div><h3>Author</h3></div>
+    <div><input type="text" value="<%= @book.author %>" name="book[author]"></div>
+  </div>
+  <div class="col-lg-2 col-md-2">
+    <div><h3>Cuisine</h3></div>
+    <div><input type="text" value="<%= @book.cuisine %>" name="book[cuisine]"></div></div>
+  <div class="col-lg-2 col-md-2">
+    <div><h3>Pub Date</h3></div>
+    <div><input type="text" value="<%= @book.publication_date.strftime("%b-%Y") %>" name="book[publication_date]"></div></div>
+  <div class="col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-2 col-xs-4">
+    <input type="submit" class="btn btn-primary btn-block" value="Submit Changes">
+  </div>
+</form>
